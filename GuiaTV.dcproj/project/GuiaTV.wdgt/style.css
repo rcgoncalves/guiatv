@@ -1,0 +1,291 @@
+/***********************************************
+* Programming and Design: José Coelho
+***********************************************/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-family: "Helvetica";
+}
+
+#front {
+	margin: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 203px;
+	height: 323px;
+	visibility: visible;
+	background-image: url("Default.png");
+	background-repeat: no-repeat;  
+}
+
+#back { 
+	margin: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 200px;
+	height: 320px;
+	display: none;
+	background-image: url("Images/backside.png");
+	background-repeat: no-repeat;
+	font-family: "Lucida Grande";
+	font-size: 11pt;
+	color: white;
+}
+
+/* indicador de progresso */
+#progressGraphic {
+	display:block;
+	position:absolute;
+	top: 120px;
+	left: 89px;
+	height: 22px;
+	width: 22px;
+}
+
+#channel {
+	position:absolute;
+	top: 16px;
+	left: 98px;
+	width: 90px;
+	height: 15px;
+	font-size: 10pt;
+	color: white;
+	overflow: hidden;
+}
+
+/* título parte da frente */
+#title {
+	position:absolute;
+	font-family: 'Gill Sans';
+	font-size: 14pt;
+	color: white;
+	top:8px;
+	left:16px;
+	cursor: pointer;
+}
+
+/* evidente? */
+#ChannelSelected {
+	position: absolute;
+	top: 10px;
+	left: 100px;
+	font-family: 'Gill Sans';
+	font-size: 11pt;
+	color: white;
+	z-index: 18;
+}
+
+/* o drop menu verdadeiro */
+#dropdown {
+	position:absolute;
+	top: 14px;
+	right: 16px;
+	width: 100px;
+	opacity: 0.0;
+	z-index: 20;
+	overflow: auto;
+}
+
+/* o canal escolhido */
+#selected {
+	position:absolute;
+	top: 12px;
+	left: 100px;
+	z-index: 18;
+	font-size: 10pt;
+	font-family: 'Gill Sans';
+	color: white;
+}
+
+/* a listagem dos programas */
+#contents { 
+	position: absolute;
+	top: 55px;
+	bottom: 50px;
+	left: 12px;
+	right: 28px;
+	overflow: hidden;
+	font-family: Lucida Grande;
+	font-size: 10pt;
+	color: white;
+	-apple-dashboard-region:dashboard-region(control rectangle);
+	-khtml-user-select:text;
+}
+
+/* uma linha de cada cor: > legiblidade */
+#contents .even { 
+	/*background-color: #89A232;*/
+	background: url('Images/programs.png') repeat-y;
+	padding: 3px;
+}
+
+#contents .odd { 
+	padding: 3px;
+}
+
+/* posição da scrollbar */
+#scrollbar {
+	position: absolute;
+	top: 45px;
+	bottom: 40px;
+	right: 12px;
+	width: 16px;
+	-apple-dashboard-region:dashboard-region(control rectangle);        
+}
+
+
+#weekHolder {
+	position: absolute;
+	bottom: 11px;
+	left: 8px;
+	width: 187px;
+	height: 20px;
+	color: #6C6C6C;
+	font-size: 9pt;
+	text-align: center;
+	background: url('Images/Weekdays/week0.png') no-repeat;
+	cursor: pointer;
+}
+
+#dummy {
+	position: absolute;
+	bottom: 11px;
+	left: 8px;
+	width: 187px;
+	height: 20px;
+	background: url('Images/weekHolder.png') no-repeat;
+}
+
+#hoje {
+	position: absolute;
+	bottom: 3px;
+	left: 2px;
+	width: 26px;
+	z-index: 1;
+}
+
+#p0 {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	height: 20px;
+	width: 26px;
+	z-index: 10;
+}
+
+#p1 {
+	position: absolute;
+	bottom: 3px;
+	left: 32px;
+	width: 20px;
+}
+
+#p2 {
+	position: absolute;
+	bottom: 3px;
+	left: 55px;
+	width: 20px;
+}
+
+#p3 {
+	position: absolute;
+	bottom: 3px;
+	left: 76px;
+	width: 20px;
+}
+
+#p4 {
+	position: absolute;
+	bottom: 3px;
+	left: 100px;
+	width: 20px;
+}
+
+#p5{
+	position: absolute;
+	bottom: 3px;
+	left: 124px;
+	width: 20px;
+}
+
+#p6 {
+	position: absolute;
+	bottom: 3px;
+	left: 148px;
+	width: 20px;
+}
+
+#infoButton { 
+	position: absolute;
+	bottom: 28px;
+	right: 25px;
+}
+
+#refreshButton { 
+	position: absolute;
+	bottom: 18px;
+	left: 14px;
+	width: 16px;
+	height: 16px;
+}
+
+/* ************************************* */
+#doneButton {  
+	position: absolute;
+	bottom: 12px;
+	right: 16px;
+} 
+
+#userSelection { 
+	position: absolute;
+	top: 80px;
+	left: 14px;
+	bottom: 40px;
+	width: 170px;
+	background-color: white;
+	overflow: auto;
+	font-size: 10pt;
+	color: black;
+}
+
+#userSelection input {
+	margin-right: 4px;
+}
+
+#backTitle { 
+	position: absolute;
+	top: 55px;
+	left: 20px;
+}
+
+#package { 
+	position: absolute;
+	top: 12px;
+	left: 20px;
+}
+
+#backOptions { 
+	position: absolute;
+	top: 36px;
+	left: 30px;
+	color: white;
+	font-size: 9pt;
+}
+
+#options { 
+	position: absolute;
+	top: 32px;
+	left: 88px;
+}
+
+#website {
+  position: relative;
+  left: 14px;
+  top: 289px;
+}

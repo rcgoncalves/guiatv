@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AllowSystem</key>
+	<true/>
+	<key>AllowFileAccessOutsideOfWidget</key>
+	<true/>
+	<key>AllowNetworkAccess</key>
+	<true/>
+	<key>CFBundleDisplayName</key>
+	<string>GuiaTV</string>
+	<key>CFBundleIdentifier</key>
+	<string>pt.jaac.guiatv</string>
+	<key>CFBundleVersion</key>
+	<string>r3.2.0</string>
+	<key>CloseBoxInsetX</key>
+	<integer>8</integer>
+	<key>CloseBoxInsetY</key>
+	<integer>8</integer>
+	<key>Height</key>
+	<integer>340</integer>
+	<key>MainHTML</key>
+	<string>GuiaTV.html</string>
+	<key>Width</key>
+	<integer>214</integer>
+</dict>
+</plist>

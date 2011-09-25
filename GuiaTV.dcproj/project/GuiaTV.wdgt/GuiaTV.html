@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style type="text/css"> 
+		@import "style.css";
+	</style>
+
+	<!-- title	-->
+	<title>GuiaTV</title>
+
+	<!-- Apple classes for buttons -->
+	<script type='text/javascript' src='/System/Library/WidgetResources/AppleClasses/AppleAnimator.js' charset='utf-8'/>
+	<script type='text/javascript' src='/System/Library/WidgetResources/AppleClasses/AppleButton.js' charset='utf-8'/>
+	<script type='text/javascript' src='/System/Library/WidgetResources/AppleClasses/AppleInfoButton.js' charset='utf-8'/>
+
+	<!-- Apple classes for scroll area -->
+	<script type="text/javascript" src="/System/Library/WidgetResources/AppleClasses/AppleScrollArea.js" charset="utf-8"/>
+	<script type="text/javascript" src="/System/Library/WidgetResources/AppleClasses/AppleScrollbar.js" charset="utf-8"/>
+
+	<!-- Widget classes -->
+	<script type='text/javascript' src='Scripts/URL.js' />
+	<script type='text/javascript' src='Scripts/ParseHtml.js' />
+	<script type='text/javascript' src='Scripts/GuiaTV.js' />
+	<script type='text/javascript' src='Scripts/RefreshButton.js' />
+
+	<!-- available channels-->
+	<script type='text/javascript' src='Scripts/Channels.js' />
+</head>
+
+<body onload="Guia.setupWidget()">
+	<div id="front">
+		<!-- widget title -->
+		<div id="title" onclick="Guia.size.alter()">GuiaTV</div>
+
+		<!-- drop menu (invisible) -->
+		<form><select id='dropdown' onchange='Guia.getContents();'></select></form>
+		
+		<!-- fake drop down, only stores the selected channel -->
+		<div id='selected'></div>
+
+		<div id="expanded">
+			<!-- channel schedule -->
+			<div id="contents"></div>
+
+			<!-- scroll schedule -->
+			<div id='scrollbar'></div>
+
+			<!-- user feedback -->
+			<img id='progressGraphic' src="Images/Progress/prog1.png" />
+			
+			<div id="dummy"></div>
+			<div id="weekHolder">
+				<div id="hoje">hoje</div>
+				<div id="p0" onclick='Guia.getContents(0);'></div>
+				<div id="p1" onclick='Guia.getContents(1);'></div>
+				<div id="p2" onclick='Guia.getContents(2);'></div>
+				<div id="p3" onclick='Guia.getContents(3);'></div>
+				<div id="p4" onclick='Guia.getContents(4);'></div>
+				<div id="p5" onclick='Guia.getContents(5);'></div>
+				<div id="p6" onclick='Guia.getContents(6);'></div>
+			</div>
+
+			<!-- some animated buttons -->
+			<div id='infoButton'></div>
+			<div id='refreshButton'></div>
+		</div>
+		
+	</div><!-- front -->
+
+	<div id="back">
+		<form id='package'>
+			<p>Seleccione o pacote:</p>
+			<select onchange="Guia.prefs.setPackage();">
+				<option value="none"></option>
+				<option value="FantasticHD">Fantastic HD</option>
+				<option value="DigitalHD">Digital HD</option>
+				<option value="SeleccaoDigital">Selecção Digital</option>
+				<option value="BaseSportTV">Base Sport TV</option>
+				<option value="SegundaHabitacao">Segunda Habitação</option>
+ 				<option value="Base">Base</option>
+			</select>
+		</form>
+		<div id="backTitle">Seleccione os canais:</div>
+        <div id="website" onclick='Guia.openWebsite();'>GuiaTV r3.2.0</div>
+		<form id='userSelection'></form>
+		<div id="doneButton"></div>
+	</div>
+
+</body>
+</html>
+
