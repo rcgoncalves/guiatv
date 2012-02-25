@@ -19,7 +19,7 @@ html {
     width: 203px;
     height: 323px;
     visibility: visible;
-    background-image: url(Default.png);
+    background-image: url(Images/open.png);
     background-repeat: no-repeat no-repeat;
 }
 
@@ -46,8 +46,13 @@ html {
     left: 89px;
     height: 22px;
     width: 22px;
-    visibility: hidden;
-    opacity: 0;
+    font-family: 'Lucida Grande';
+    font-size: 10pt;
+    opacity: 1;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 #channel {

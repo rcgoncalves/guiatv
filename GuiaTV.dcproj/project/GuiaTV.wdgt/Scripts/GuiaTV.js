@@ -174,7 +174,7 @@ Guia.getDataForChannel = function(channelId, weekDay) {
             for(var i=0; i < list.children.length; i++) {
                 hour = list.children[i].children[0].children[0].children[2].innerHTML.substring(0,5);
                 program = list.children[i].children[0].children[0].children[0].innerHTML;
-                listening += '<div id="prog' + i + '" class="' + (i%2 ? 'even' : 'odd' )  + '">';
+                listening += '<div id="prog' + i + '" style="background: solid #000;" class="' + (i%2 ? 'even' : 'odd' )  + '">';
                 listening += hour + ' ' + program;
                 listening += '</div>';
 			
