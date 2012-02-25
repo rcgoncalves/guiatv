@@ -140,7 +140,7 @@ Guia.getDataForChannel = function(channelId, weekDay) {
 	/* for some reason compression dont work */
 	web.noCompression();
 
-	web.location = 'http://www.zon.pt/Televisao/ListaProgramas.aspx?cat=&channelSigla='+ channelId + '&dia=' + weekDay;
+	web.location = 'http://www.zon.pt/tv/guiaTV/Pages/Guia-TV-programacao.aspx?channelSigla='+ channelId;
 
 	web.fetchAsync(parseContents);
 	
@@ -152,48 +152,47 @@ Guia.getDataForChannel = function(channelId, weekDay) {
 			return;
 		}
 		
-		parse.contents = parse.getElementsByClassName("epgFrame")[0];
-		
-		information = parse.getElementsByTagName("td");
-				
+        // obtain div id based on current day
+        var date = new Date();
+        date.setDate(date.getDate() + weekDay);
+        var day = "day" + date.getDate();
+        // get ul element with desired info
+        information = parse.getElementById(day);
+        information.replace(/\r/g, '');
+        var div = document.createElement( 'div' );
+        div.innerHTML = information;
+        var list = div.children[0].children[0];
+        
 		listening = new String();
+		var now = [date.getHours(), date.getMinutes()];
+        var current = -1;
 		
-		var a = 0;
-		var div = document.createElement( 'div' );
-		var startPos = -1;
-		var now_hm = [new Date().getHours(), new Date().getMinutes()];
-		
-        if(information==null)
-        {
-        listening = "Não existe informação disponível sobre este canal.";
+        if(information == null) {
+            listening = "<b>Não existe informação disponível sobre este canal.</b>";
         }
-        else
-        {
-            for(var i=0; i < information.length; i+=2) {
-                hour = Guia.utils.stripTags(information[i], true, "td", "font", "a","/a","/td","/font", "span", "/span");
-                div.innerHTML = information[i+1];
-                desc = Guia.utils.removeWholeTag( div.childNodes[1].getAttribute('title') );
-                position = desc.indexOf("<br>",0);
-                program = desc.substring(0,position);
-                desc = desc.substring(position+4);
+        else {
+            for(var i=0; i < list.children.length; i++) {
+                hour = list.children[i].children[0].children[0].children[2].innerHTML.substring(0,5);
+                program = list.children[i].children[0].children[0].children[0].innerHTML;
+                listening += '<div id="prog' + i + '" class="' + (i%2 ? 'even' : 'odd' )  + '">';
+                listening += hour + ' ' + program;
+                listening += '</div>';
 			
-                listening += '<div id="prog' + i + '" title="' + desc + '" class="' + (++a%2 ? 'even' : 'odd' )  + '">' + hour + ' ' + program + '</div>';
-			
-                // find out the current show (check to see if the show time is after the current time and then selects the previous show)
+                // find out the current show
+                // check to see if the show time is after the current time and then selects the previous show
                 var hm = hour.split(':');
-                if ( startPos == -1 && hm[0] > now_hm[0] || (hm[0] == now_hm[0] && hm[1] > now_hm[1]) ) {
-                    startPos = i-2;
+                if ( current == -1 && hm[0] > now[0] || (hm[0] == now[0] && hm[1] > now[1]) ) {
+                    current = i - 1;
                 }
             }
         }
 		
 		Guia.progress.stop();
-		$("contents").innerHTML = listening;
+		$('contents').innerHTML = listening;
 		
-        if(information!=null)
-        {
-            $('prog'+startPos).innerHTML = '<b><i>' + $('prog'+startPos).innerHTML + '</i></b>';
-            Guia.scrollArea.reveal($('prog'+startPos));
+        if(information != null) {
+            $('prog' + current).innerHTML = '<b><i>' + $('prog' + current).innerHTML + '</i></b>';
+            Guia.scrollArea.reveal($('prog' + current));
         }
 
 		Guia.scrollbar.refresh();

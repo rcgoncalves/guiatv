@@ -2,18 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>AllowSystem</key>
-	<true/>
 	<key>AllowFileAccessOutsideOfWidget</key>
 	<true/>
 	<key>AllowNetworkAccess</key>
+	<true/>
+	<key>AllowSystem</key>
 	<true/>
 	<key>CFBundleDisplayName</key>
 	<string>GuiaTV</string>
 	<key>CFBundleIdentifier</key>
 	<string>pt.jaac.guiatv</string>
+	<key>CFBundleShortVersionString</key>
+	<string>r3.2.1</string>
 	<key>CFBundleVersion</key>
-	<string>r3.2.0</string>
+	<string>r3.2.1</string>
 	<key>CloseBoxInsetX</key>
 	<integer>8</integer>
 	<key>CloseBoxInsetY</key>
