@@ -370,7 +370,7 @@ Guia.show = {
 }
 
 Guia.openWebsite = function() {
-    widget.openURL('http://rcgoncalves.net/project/guiatv/');
+    widget.openURL('http://rcgoncalves.pt/project/guiatv/');
 }
 
 Guia.collapse = function() {
