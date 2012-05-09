@@ -7,7 +7,7 @@
 		<key>Widget</key>
 		<dict>
 			<key>CYBackwardCompatibleExport</key>
-			<true/>
+			<false/>
 			<key>CYShineVersion</key>
 			<integer>2</integer>
 			<key>MainCSS</key>
