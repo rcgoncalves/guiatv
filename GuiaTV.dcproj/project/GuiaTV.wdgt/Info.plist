@@ -13,9 +13,9 @@
 	<key>CFBundleIdentifier</key>
 	<string>pt.jaac.guiatv</string>
 	<key>CFBundleShortVersionString</key>
-	<string>r3.2.1</string>
+	<string>r3.2.2</string>
 	<key>CFBundleVersion</key>
-	<string>r3.2.1</string>
+	<string>r3.2.2</string>
 	<key>CloseBoxInsetX</key>
 	<integer>8</integer>
 	<key>CloseBoxInsetY</key>

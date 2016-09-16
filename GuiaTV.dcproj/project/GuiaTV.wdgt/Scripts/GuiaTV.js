@@ -140,7 +140,7 @@ Guia.getDataForChannel = function(channelId, weekDay) {
 	/* for some reason compression dont work */
 	web.noCompression();
 
-	web.location = 'http://www.zon.pt/tv/guiaTV/Pages/Guia-TV-programacao.aspx?channelSigla='+ channelId;
+	web.location = 'http://www.nos.pt/particulares/televisao/guia-tv/Pages/channel.aspx?channel='+ channelId;
 
 	web.fetchAsync(parseContents);
 	
